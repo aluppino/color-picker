@@ -23,10 +23,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var hexValue: UILabel!
     
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.borderWidth = 5;
         colorView.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        tapGestureRecognizer.addTarget(self, action: "didTapView")
+        self.view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @IBAction func changeRedSlider(sender: UISlider!) {
@@ -92,6 +97,10 @@ class ViewController: UIViewController {
         }
         blueSlider.value = Float(blueValue.text!)!
         calculateColor(nil)
+    }
+    
+    func didTapView(){
+        self.view.endEditing(true)
     }
 
 }
