@@ -62,6 +62,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func enterRedValue(sender: UITextField) {
+        if (redValue.text == "") {
+            redValue.text = "0"
+        }
         if (Float(redValue.text!) > 255) {
             redValue.text = "255"
         }
@@ -70,6 +73,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func enterGreenValue(sender: UITextField) {
+        if (greenValue.text == "") {
+            greenValue.text = "0"
+        }
         if (Float(greenValue.text!) > 255) {
             greenValue.text = "255"
         }
@@ -78,6 +84,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enterBlueValue(sender: UITextField) {
+        if (blueValue.text == "") {
+            blueValue.text = "0"
+        }
         if (Float(blueValue.text!) > 255) {
             blueValue.text = "255"
         }
